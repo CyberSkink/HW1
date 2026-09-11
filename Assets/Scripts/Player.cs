@@ -11,14 +11,23 @@ public class Player : MonoBehaviour
     private int _numSeedsLeft;
     private int _numSeedsPlanted;
 
-    private void Start ()
+    public static Vector2 movement;
+  
+    private Rigidbody2D rb;
+    //Establishes the rigidbody variable
+
+
+    private void  Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        //gets the player's rigidbody component
+        rb.gravityScale = 0;
+        //sets gravity to zero on rigidbody2D
     }
 
     private void Update()
     {
-        
+        Input.GetKey("a");
     }
 
     public void PlantSeed ()
